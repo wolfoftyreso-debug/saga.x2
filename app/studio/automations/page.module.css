@@ -1,0 +1,29 @@
+.surfaceNav {
+  display: flex;
+  width: 100%;
+  max-width: 1340px;
+  gap: 5px;
+  margin: 0 auto 21px;
+  border-bottom: 1px solid #dfe5e8;
+}
+
+.surfaceNav a {
+  display: inline-flex;
+  min-height: 38px;
+  align-items: center;
+  border-bottom: 2px solid transparent;
+  padding: 0 11px;
+  color: #67747b;
+  font-size: .78rem;
+  font-weight: 720;
+  text-decoration: none;
+}
+
+.surfaceNav a:hover { color: #075f4e; }
+.surfaceNav .active { border-bottom-color: #087b63; color: #075f4e; }
+.surfaceNav a:focus-visible { outline: 3px solid rgba(8, 123, 99, .3); outline-offset: -2px; }
+
+@media (max-width: 620px) {
+  .surfaceNav { overflow-x: auto; margin-bottom: 15px; }
+  .surfaceNav a { flex: 0 0 auto; min-height: 42px; padding: 0 9px; font-size: .73rem; }
+}

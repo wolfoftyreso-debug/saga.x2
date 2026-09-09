@@ -1,0 +1,46 @@
+{
+  "name": "min-bed-mning-det-h-r",
+  "version": "0.1.0",
+  "private": true,
+  "engines": {
+    "node": "24.x"
+  },
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint .",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "check:vercel": "node scripts/vercel-readiness.mjs",
+    "check:vercel:static": "node scripts/vercel-readiness.mjs --static"
+  },
+  "dependencies": {
+    "@neondatabase/serverless": "^1.1.0",
+    "@next/env": "16.3.4",
+    "@supabase/ssr": "^0.8.0",
+    "@supabase/supabase-js": "^2.49.1",
+    "@vercel/blob": "^2.8.0",
+    "@vercel/oidc": "^3.8.5",
+    "jose": "^6.2.10",
+    "next": "16.3.4",
+    "openai": "^5.12.2",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "server-only": "^0.0.1",
+    "sharp": "0.35.4",
+    "zod": "^3.24.2"
+  },
+  "devDependencies": {
+    "@electric-sql/pglite": "^0.5.8",
+    "@types/jsdom": "^30.0.0",
+    "@types/node": "^22.13.10",
+    "@types/react": "^19.0.10",
+    "@types/react-dom": "^19.0.4",
+    "eslint": "^9.21.0",
+    "eslint-config-next": "16.3.4",
+    "jsdom": "^26.1.0",
+    "typescript": "^5.8.2",
+    "vitest": "4.1.11"
+  }
+}

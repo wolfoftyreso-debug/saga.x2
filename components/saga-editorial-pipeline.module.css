@@ -1,0 +1,314 @@
+.pipeline {
+  overflow: hidden;
+  border: 1px solid #dfe6e2;
+  border-radius: 22px;
+  background:
+    radial-gradient(circle at 97% 3%, rgba(93, 201, 162, .18), transparent 29%),
+    linear-gradient(135deg, #f8fcfa 0%, #ffffff 56%, #f8fbfa 100%);
+  box-shadow: 0 10px 34px rgba(27, 43, 36, .055);
+}
+
+.header {
+  display: grid;
+  gap: 18px;
+  padding: clamp(19px, 3vw, 30px);
+  border-bottom: 1px solid #e3ebe7;
+}
+
+.header > div { min-width: 0; }
+
+.eyebrow {
+  margin: 0;
+  color: #18755a;
+  font-size: .58rem;
+  font-weight: 760;
+  letter-spacing: .11em;
+  line-height: 1.2;
+}
+
+.header h2 {
+  max-width: 17ch;
+  margin: 8px 0 10px;
+  color: #202a26;
+  font-size: clamp(1.4rem, 3vw, 2.1rem);
+  font-weight: 660;
+  letter-spacing: -.052em;
+  line-height: 1.02;
+}
+
+.header > div > p:last-child {
+  max-width: 66ch;
+  margin: 0;
+  color: #64716b;
+  font-size: .73rem;
+  line-height: 1.53;
+}
+
+.snapshot {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 6px;
+  margin: 0;
+}
+
+.snapshot > div {
+  min-width: 0;
+  border: 1px solid #e1ebe6;
+  border-radius: 11px;
+  padding: 9px 8px;
+  background: rgba(255, 255, 255, .72);
+}
+
+.snapshot dt {
+  overflow: hidden;
+  color: #7a8580;
+  font-size: .49rem;
+  font-weight: 680;
+  line-height: 1.15;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.snapshot dd {
+  margin: 5px 0 0;
+  color: #20352d;
+  font-size: 1.15rem;
+  font-weight: 700;
+  letter-spacing: -.055em;
+  line-height: 1;
+}
+
+.body {
+  display: grid;
+  gap: 13px;
+  padding: 12px;
+}
+
+.stages {
+  display: grid;
+  gap: 2px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.stage {
+  position: relative;
+  display: grid;
+  grid-template-columns: 31px minmax(0, 1fr);
+  gap: 9px;
+  min-width: 0;
+  padding: 10px 8px 11px 0;
+  border-bottom: 1px solid #e9efec;
+}
+
+.stage:last-child { border-bottom: 0; }
+
+.rail {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  min-height: 100%;
+}
+
+.rail::before {
+  position: absolute;
+  top: 25px;
+  bottom: -14px;
+  width: 1px;
+  background: #d8e5df;
+  content: "";
+}
+
+.stage:last-child .rail::before { display: none; }
+
+.rail i {
+  position: absolute;
+  top: 5px;
+  width: 11px;
+  height: 11px;
+  border: 3px solid #fcfffd;
+  border-radius: 999px;
+  box-sizing: content-box;
+  background: #a6b5ae;
+  box-shadow: 0 0 0 1px #cfded7;
+}
+
+.rail b {
+  position: absolute;
+  top: 23px;
+  color: #84908a;
+  font-size: .47rem;
+  font-weight: 730;
+  letter-spacing: .06em;
+}
+
+.stageMain { min-width: 0; }
+
+.stageMeta {
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+  margin-bottom: 3px;
+}
+
+.stageMeta span {
+  color: #23694f;
+  font-size: .55rem;
+  font-weight: 750;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+
+.stageMeta em {
+  color: #8a9690;
+  font-size: .52rem;
+  font-style: normal;
+  font-weight: 560;
+}
+
+.stage h3 {
+  max-width: 39ch;
+  margin: 0;
+  color: #29332f;
+  font-size: .78rem;
+  font-weight: 670;
+  letter-spacing: -.018em;
+  line-height: 1.31;
+}
+
+.stageMain > p {
+  max-width: 63ch;
+  margin: 4px 0 7px;
+  color: #6c7872;
+  font-size: .62rem;
+  line-height: 1.45;
+}
+
+.stageAction {
+  display: inline-flex;
+  gap: 4px;
+  align-items: center;
+  color: #087758;
+  font-size: .6rem;
+  font-weight: 690;
+  line-height: 1.3;
+  text-decoration: none;
+}
+
+.stageAction:hover { color: #045e45; text-decoration: underline; }
+
+.state {
+  grid-column: 2;
+  justify-self: start;
+  border: 1px solid #e0e6e2;
+  border-radius: 999px;
+  padding: 4px 6px;
+  color: #7a857f;
+  background: #f7f9f8;
+  font-size: .49rem;
+  font-weight: 690;
+  line-height: 1;
+}
+
+.stageReady .rail i,
+.stageIn_progress .rail i { background: #11966f; box-shadow: 0 0 0 1px #98d6be; }
+.stageReady .state { border-color: #c2e5d4; color: #087454; background: #effaf5; }
+.stageIn_progress .state { border-color: #cce7db; color: #176d53; background: #f1faf6; }
+.stageNeeds_setup .rail i { background: #d49b27; box-shadow: 0 0 0 1px #ebd09b; }
+.stageNeeds_setup .state { border-color: #f0dcb3; color: #866120; background: #fff9ee; }
+
+.focus {
+  display: grid;
+  align-content: start;
+  border: 1px solid #cfe3d9;
+  border-radius: 16px;
+  padding: 15px;
+  background: linear-gradient(145deg, #ecf8f1, #fafffc 70%);
+}
+
+.focusMark {
+  display: flex;
+  gap: 3px;
+  width: max-content;
+  margin-bottom: 14px;
+}
+
+.focusMark i {
+  display: block;
+  width: 8px;
+  height: 8px;
+  border-radius: 999px;
+  background: #16976f;
+}
+
+.focusMark i:nth-child(2) { opacity: .64; }
+.focusMark i:nth-child(3) { opacity: .32; }
+
+.focus h3 {
+  max-width: 20ch;
+  margin: 7px 0 7px;
+  color: #20372d;
+  font-size: 1.02rem;
+  font-weight: 680;
+  letter-spacing: -.04em;
+  line-height: 1.08;
+}
+
+.focus > p:not(.eyebrow) {
+  max-width: 48ch;
+  margin: 0;
+  color: #557064;
+  font-size: .65rem;
+  line-height: 1.5;
+}
+
+.focusAction {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  width: max-content;
+  min-height: 34px;
+  margin-top: 14px;
+  border-radius: 9px;
+  padding: 0 11px;
+  color: #fff;
+  background: #087d5e;
+  font-size: .62rem;
+  font-weight: 690;
+  text-decoration: none;
+}
+
+.focusAction:hover { background: #056a4f; }
+
+.focus small {
+  margin-top: 11px;
+  color: #71857b;
+  font-size: .52rem;
+  line-height: 1.42;
+}
+
+@media (min-width: 700px) {
+  .header { grid-template-columns: minmax(0, 1fr) minmax(250px, .66fr); align-items: end; }
+  .body { grid-template-columns: minmax(0, 1fr) minmax(220px, .42fr); gap: 16px; padding: 17px; }
+  .stage { grid-template-columns: 35px minmax(0, 1fr) auto; gap: 11px; padding: 11px 8px 11px 0; }
+  .state { grid-column: 3; align-self: start; margin-top: 4px; }
+  .stageMain > p { margin-bottom: 6px; }
+}
+
+@media (min-width: 1020px) {
+  .header { padding: 28px 30px; }
+  .body { grid-template-columns: minmax(0, 1fr) minmax(260px, .36fr); }
+  .focus { padding: 18px; }
+}
+
+@media (max-width: 420px) {
+  .header { padding: 16px; }
+  .snapshot > div { padding: 8px 6px; }
+  .snapshot dt { font-size: .44rem; }
+  .snapshot dd { font-size: 1.02rem; }
+  .body { padding: 9px; }
+  .stage { grid-template-columns: 27px minmax(0, 1fr); gap: 7px; }
+  .stage h3 { font-size: .73rem; }
+}

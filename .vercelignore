@@ -1,0 +1,43 @@
+# Source deployments only. New root files stay private until explicitly allowed.
+# https://vercel.com/docs/deployments/vercel-ignore#allowlist
+/*
+# CLI traversal tests directory names without a trailing slash.
+!/app
+!/components
+!/lib
+!/public
+!/db
+!/scripts
+!/package.json
+!/package-lock.json
+!/next.config.ts
+!/next-env.d.ts
+!/proxy.ts
+!/tsconfig.json
+!/eslint.config.mjs
+
+# Only deploy the active schema and the secret-safe preflight script.
+/db/*
+!/db/migrations
+/scripts/*
+!/scripts/vercel-readiness.mjs
+
+# Also protect sensitive/local artifacts placed inside allowed directories.
+.env*
+*.pem
+*.key
+*.p12
+*.pfx
+credentials*.json
+service-account*.json
+secrets
+node_modules
+.next
+.vercel
+*.log
+*.tsbuildinfo
+.DS_Store
+
+# Vercel configuration and the non-secret template are required by preflight.
+!/vercel.json
+!/.env.example

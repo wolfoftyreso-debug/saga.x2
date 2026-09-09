@@ -1,0 +1,33 @@
+# Dependencies and build output
+node_modules/
+.next/
+out/
+coverage/
+*.tsbuildinfo
+
+# Credentials are never part of the public source clone.
+.env*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+credentials*.json
+service-account*.json
+secrets/
+
+# Local tooling and generated/private artifacts
+.vercel/
+.agents/
+.codex/
+skills-lock.json
+tmp/
+.tmp*/
+artifacts/
+*.log
+
+# Environment-specific operational reports stay outside the public repository.
+docs/*20??-??-??*
+docs/SAGA_RELEASE_READINESS.md
+docs/SAGA_SYSTEMS_VOICE_PACK_SV_V1.json
+tests/saga-systems-voice-pack.test.ts
